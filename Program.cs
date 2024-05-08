@@ -19,25 +19,7 @@ namespace HelloWorld
 
             DataDapper dapper = new DataDapper(config);
 
-            // File.WriteAllText("log.txt", "\n" + sql + "\n");
-
-            // using StreamWriter openFile = new("log.txt", append: true);
-
-            // openFile.WriteLine("\n" + sql + "\n");
-
-            // openFile.Close();
-
             string computersJson = File.ReadAllText("C://Users/User/dotnet-course-code/HelloWorld/Computers.json");
-
-            // Console.WriteLine(computersJson);
-
-            // JsonSerializerOptions options = new JsonSerializerOptions(){
-
-            //     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
- 
-            // };
-
-            // IEnumerable<Computer>? computers = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<Computer>>(computersJson, options);
 
             IEnumerable<Computer>? computers = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<Computer>>(computersJson);
 
